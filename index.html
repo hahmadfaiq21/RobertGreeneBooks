@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="assets/logo.png" />
+  <title>Robert Greene</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+
+  <header style="color: var(--white);">
+    <h1>Robert Greene</h1>
+    <h3>American Author</h3>
+  </header>
+
+  <main>
+    <aside>
+      <h2>Robert Greene</h2>
+      <img src="assets/profile.jpg" alt="Foto Penulis" />
+      <p><strong>Born:</strong> May 14, 1959<br>Los Angeles, California, U.S.</p>
+      <p><strong>Occupation:</strong> Author</p>
+      <p><strong>Education:</strong> University of Wisconsin-Madison</p>
+      <p><strong>Partner:</strong> Anna Biller</p>
+    </aside>
+
+    <div id="content">
+      <h2 class="center-text">
+        Robert Greene:<br>The Journey and Legacy of a Mastermind in Strategy and Power
+      </h2>
+      <p class="center-text">
+        Robert Greene (born May 14, 1959) is an American author of books on strategy, power, and seduction. 
+        He has written seven international bestsellers, including The 48 Laws of Power, The Art of Seduction, 
+        The 33 Strategies of War, The 50th Law (with rapper 50 Cent), Mastery, The Laws of Human Nature, and The Daily Laws.
+      </p>
+      <p class="center-text">
+        Born in 1959, Greene studied classical studies and worked a variety of jobs, before publishing his first book in 1998. 
+        Greene frequently draws on analyses of past historical figures and events throughout his writing. 
+        Greene's works have been referenced by a wide variety of celebrities, political figures, and civil rights activists.
+      </p>
+      <p class="center-text">
+        The younger son of Jewish parents, Greene grew up in Los Angeles and attended the University of California, Berkeley, 
+        before finishing his degree at the University of Wisconsin–Madison with a B.A. degree in classical studies. 
+        Prior to becoming an author, Greene estimates that he worked about 50 jobs, including as a construction worker, 
+        translator, magazine editor, and Hollywood movie writer. In 1995, Greene worked as a writer at Fabrica, 
+        an art and media school in Italy, and met a book packager named Joost Elffers. Greene pitched a book about power to Elffers 
+        and wrote a treatment which eventually became The 48 Laws of Power. He would note this as the turning point of his life.
+      </p>
+    </div>
+
+    <section class="books">
+      <h2>Books</h2>
+      <div class="slider" id="articleSlider"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p style="color: var(--white);">
+      Source: 
+      <a href="https://en.wikipedia.org/wiki/Robert_Greene_(American_author)" target="_blank" style="color: var(--link);">
+        Wikipedia
+      </a>
+    </p>
+  </footer>
+
+  <script>
+    const articles = [
+      {
+        title: "The 48 Laws of Power",
+        image: "assets/books/book1.jpg",
+        content: "A guide for anyone who wants power, observes power, or wants to arm themselves against power."
+      },
+      {
+        title: "The Art of Seduction",
+        image: "assets/books/book2.jpg",
+        content: "Profiles nine types of seducers and aspects of attraction, authenticity, storytelling, and negotiation."
+      },
+      {
+        title: "The 33 Strategies of War",
+        image: "assets/books/book3.jpg",
+        content: "Divides into Self-Directed, Organizational, Defensive, Offensive, and Unconventional Warfare."
+      },
+      {
+        title: "The 50th Law",
+        image: "assets/books/book4.jpg",
+        content: "Talks about strategy and fearlessness, mixing lessons from 50 Cent's life and historical figures."
+      },
+      {
+        title: "Mastery",
+        image: "assets/books/book5.jpg",
+        content: "Examines masters throughout history and the universal ingredients to achieve mastery."
+      },
+      {
+        title: "The Laws of Human Nature",
+        image: "assets/books/book6.jpg",
+        content: "Discusses drives, motivations, cognitive biases, persuasion, rationality, and mortality."
+      }
+    ];
+
+    const slider = document.getElementById("articleSlider");
+
+    articles.forEach(item => {
+      const article = document.createElement("article");
+      article.innerHTML = `
+        <header style="color: var(--white);"><h4>${item.title}</h4></header>
+        <img src="${item.image}" width="200" height="250" alt="${item.title}" />
+        <p class="center-text">${item.content}</p>
+      `;
+      slider.appendChild(article);
+    });
+  </script>
+
+</body>
+</html>

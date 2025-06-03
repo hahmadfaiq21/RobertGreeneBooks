@@ -1,0 +1,156 @@
+:root {
+  --header-footer: #0B192C;
+  --aside: #124076;
+  --link: #6A9AB0;
+  --white: #FFFFFF;
+  --article: #D4C9BE;
+  --background: #F1EFEC;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: #333;
+  line-height: 1.6;
+}
+
+header, footer {
+  background-color: var(--header-footer);
+  padding: 15px;
+  text-align: center;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+#content {
+  flex: 2;
+  margin-top: 2rem;
+  min-width: 300px;
+}
+
+.center-text {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+aside {
+  flex: 1;
+  max-width: 270px;
+  background-color: var(--aside);
+  color: var(--white);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+aside img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.books {
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.slider article {
+  flex: 0 0 300px;
+  background-color: var(--white);
+  border-radius: 10px;
+  color: var(--header-footer);
+  border: 1px solid #ccc;
+  padding: 10px;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slider article img {
+  display: block;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.slider article p {
+  overflow-wrap: break-word;
+}
+
+footer {
+  margin-top: 20px;
+}
+
+
+@media (min-width: 769px) {
+  #content {
+    order: 1;
+  }
+
+  aside {
+    order: 2;
+  }
+  
+  .books {
+	  order: 3;
+  }
+}
+
+@media (max-width: 1024px) {
+  .slider article {
+    flex: 0 0 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  aside {
+    order: -1;
+	max-width: 70%;
+	margin: auto;
+    padding: 15px;
+    margin-top: 1rem;
+  }
+
+  .slider {
+    gap: 10px;
+    padding: 5px 0;
+  }
+
+  .slider article {
+    flex: 0 0 70%;
+    max-width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .slider article img {
+    width: 70%;
+    height: 200px;
+  }
+}
+
